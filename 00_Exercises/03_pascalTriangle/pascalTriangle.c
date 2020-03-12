@@ -42,8 +42,8 @@ void PrintUsageMessage(void)
 
 void PrintPascalTriangle( int triangleRows )
 {
-	int coef = 1, space, i, j;
-	for (i = 0; i < triangleRows; i++)
+	int coef = 1, space, i, j; //coef=1 andere var= int
+	for (i = 0; i < triangleRows; i++) //anzahl reihen 
 	{
         for (space = 1; space <= triangleRows - i; space++)
 		{
