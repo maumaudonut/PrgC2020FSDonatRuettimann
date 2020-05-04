@@ -1,0 +1,1 @@
+"./ex4_hal_LCD.obj" "./ex4_main.obj" "../lnk_msp430fr4133.cmd" -llibc.a -l"/home/donat/PrgC2020FSDonatRuettimann/02_MSP430/DriverLib/Debug/DriverLib.lib" 

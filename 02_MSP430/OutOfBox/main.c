@@ -131,6 +131,7 @@ int main(void) {
                     LCDMEM[pos6] = LCDMEM[pos6+1] = i;
                     LCDMEM[12] = LCDMEM[13] = i;
                     i<<=1;
+
                 }
                 else
                 {
