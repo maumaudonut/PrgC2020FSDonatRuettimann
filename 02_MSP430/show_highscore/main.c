@@ -73,7 +73,7 @@ void DummyInitHighScore()
 {
     int i = 0;
     int j = 1;
-    int k = 1;
+
 
     struct HighScore highScore[NUMBER_OF_HIGHSCORES];
 
@@ -87,15 +87,15 @@ void DummyInitHighScore()
 
         highScore[2].rank= 0;
         highScore[2].name= "BBC";
-        highScore[2].score= 787844;
+        highScore[2].score= 390;
 
         highScore[3].rank= 0;
         highScore[3].name= "CBC";
-        highScore[3].score= 12349;
+        highScore[3].score= 2209;
 
         highScore[4].rank= 0;
         highScore[4].name= "DBC";
-        highScore[4].score= 12314;
+        highScore[4].score= 778;
 
         highScore[5].rank= 0;
         highScore[5].name= "DBC";
@@ -131,7 +131,7 @@ void DummyInitHighScore()
 
     char buffer[100];
     // Print the Sorted Structure
-    printf("\n\nHighScore sorted by SCORE:\n");
+
     for (i = 0; i < NUMBER_OF_HIGHSCORES; i++) {
         sprintf(buffer,"RANK %d NAME %s SCORE %d",highScore[i].rank,highScore[i].name,highScore[i].score);
         displayScrollText(buffer);
