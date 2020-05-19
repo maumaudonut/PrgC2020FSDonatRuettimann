@@ -30,7 +30,7 @@ int main(void)
     int textCounter = 0;                        // counter variable initialisieren um die while schleife 2x auszuführen
     while (textCounter < 2)
     {
-        displayScrollText("PRG_C DONAT RUETTIMANN");
+        displayScrollText("PRGC DONAT RUETTIMANN");
         textCounter += 1;                       // counter inkrementieren
     }
 
@@ -63,13 +63,13 @@ int main(void)
         P1OUT &= ~BIT0;
         P4OUT &= ~BIT0;
 
-        if (!(P1IN & BIT2) && batteryStatus < 7)             // request SW 1
+        if (!(P1IN & BIT2) && batteryStatus < 7)             // request Switch 1
         {
             batteryStatus -= 1;
             P1OUT ^= 0x01;
         }
 
-        if (!(P2IN & BIT6) && batteryStatus >= -1)             // request SW 2
+        if (!(P2IN & BIT6) && batteryStatus >= -1)             // request Switch 2
         {
             batteryStatus += 1;
             P4OUT ^= BIT0;

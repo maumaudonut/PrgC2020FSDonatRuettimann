@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker Unix v18.12.4                  
 ******************************************************************************
->> Linked Mon May  4 14:04:22 2020
+>> Linked Thu May  7 19:23:32 2020
 
 OUTPUT FILE NAME:   <Exercise4.out>
-ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000cc7c
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000cc7a
 
 
 MEMORY CONFIGURATION
@@ -16,7 +16,7 @@ MEMORY CONFIGURATION
   PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
   INFOA                 00001800   00000200  00000000  00000200  RWIX
   RAM                   00002000   00000800  000000a0  00000760  RWIX
-  FRAM                  0000c400   00003b80  0000092a  00003256  RWIX
+  FRAM                  0000c400   00003b80  00000928  00003258  RWIX
   JTAGSIGNATURE         0000ff80   00000004  00000004  00000000  RWIX  ffff 
   BSLSIGNATURE          0000ff84   00000004  00000004  00000000  RWIX  ffff 
   INT00                 0000ff88   00000002  00000000  00000002  RWIX
@@ -104,51 +104,51 @@ section   page    origin      length       input sections
 .mspabi.extab 
 *          0    0000c400    00000000     UNINITIALIZED
 
-.const     0    0000c400    0000008c     
+.const     0    0000c400    0000008a     
                   0000c400    00000034     ex4_hal_LCD.obj (.const:alphabetBig)
                   0000c434    0000001c     DriverLib.lib : gpio.obj (.const:GPIO_PORT_TO_BASE)
-                  0000c450    00000018     ex4_main.obj (.const:.string)
-                  0000c468    00000014     ex4_hal_LCD.obj (.const:digit)
-                  0000c47c    0000000a     DriverLib.lib : lcd_e.obj (.const:LCD_E_INIT_PARAM)
-                  0000c486    00000006     ex4_hal_LCD.obj (.const:.string:$P$T0$1)
+                  0000c450    00000016     ex4_main.obj (.const:.string)
+                  0000c466    00000014     ex4_hal_LCD.obj (.const:digit)
+                  0000c47a    0000000a     DriverLib.lib : lcd_e.obj (.const:LCD_E_INIT_PARAM)
+                  0000c484    00000006     ex4_hal_LCD.obj (.const:.string:$P$T0$1)
 
-.text      0    0000c48c    0000089e     
-                  0000c48c    000001ea     ex4_main.obj (.text:main)
-                  0000c676    00000116     ex4_main.obj (.text:Init_GPIO)
-                  0000c78c    000000d6     ex4_hal_LCD.obj (.text:displayScrollText)
-                  0000c862    000000ca     ex4_hal_LCD.obj (.text:Init_LCD)
-                  0000c92c    0000009e     DriverLib.lib : lcd_e.obj (.text:LCD_E_setPinAsCOM)
-                  0000c9ca    00000080                   : lcd_e.obj (.text:LCD_E_setPinAsLCDFunctionEx)
-                  0000ca4a    0000007a     ex4_hal_LCD.obj (.text:showChar)
-                  0000cac4    0000003e     ex4_hal_LCD.obj (.text:clearLCD)
-                  0000cb02    00000034     DriverLib.lib : gpio.obj (.text:GPIO_setAsPeripheralModuleFunctionInputPin)
-                  0000cb36    0000002c     rts430x_lc_sd_eabi.lib : div16s.asm.obj (.text)
-                  0000cb62    00000028     DriverLib.lib : lcd_e.obj (.text:LCD_E_init)
-                  0000cb8a    00000022                   : gpio.obj (.text:GPIO_setAsInputPinWithPullUpResistor)
-                  0000cbac    00000020                   : gpio.obj (.text:GPIO_selectInterruptEdge)
-                  0000cbcc    00000020                   : lcd_e.obj (.text:setLCDFunction)
-                  0000cbec    0000001e                   : gpio.obj (.text:GPIO_setAsInputPin)
-                  0000cc0a    0000001a                   : gpio.obj (.text:GPIO_setAsOutputPin)
-                  0000cc24    00000016                   : gpio.obj (.text:GPIO_clearInterrupt)
-                  0000cc3a    00000016                   : gpio.obj (.text:GPIO_enableInterrupt)
-                  0000cc50    00000016                   : gpio.obj (.text:GPIO_setOutputLowOnPin)
-                  0000cc66    00000016     rts430x_lc_sd_eabi.lib : div16u.asm.obj (.text)
-                  0000cc7c    00000014                            : boot.c.obj (.text:_isr:_c_int00_noinit_noargs)
-                  0000cc90    00000012     DriverLib.lib : lcd_e.obj (.text:LCD_E_setVLCDSource)
-                  0000cca2    00000012     rts430x_lc_sd_eabi.lib : memcpy.c.obj (.text:memcpy)
-                  0000ccb4    0000000e                            : strlen.c.obj (.text:strlen)
-                  0000ccc2    0000000c     DriverLib.lib : lcd_e.obj (.text:LCD_E_on)
-                  0000ccce    0000000c                   : lcd_e.obj (.text:LCD_E_setChargePumpFreq)
-                  0000ccda    0000000c                   : lcd_e.obj (.text:LCD_E_setVLCDVoltage)
-                  0000cce6    0000000a                   : lcd_e.obj (.text:LCD_E_selectDisplayMemory)
-                  0000ccf0    0000000a     rts430x_lc_sd_eabi.lib : lsl16.asm.obj (.text)
-                  0000ccfa    0000000a                            : lsr16.asm.obj (.text)
-                  0000cd04    00000008     DriverLib.lib : lcd_e.obj (.text:LCD_E_enableChargePump)
-                  0000cd0c    00000008     rts430x_lc_sd_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
-                  0000cd14    00000006     DriverLib.lib : lcd_e.obj (.text:LCD_E_clearAllMemory)
-                  0000cd1a    00000006                   : pmm.obj (.text:PMM_unlockLPM5)
-                  0000cd20    00000006     rts430x_lc_sd_eabi.lib : exit.c.obj (.text:abort)
-                  0000cd26    00000004                            : pre_init.c.obj (.text:_system_pre_init)
+.text      0    0000c48a    0000089e     
+                  0000c48a    000001ea     ex4_main.obj (.text:main)
+                  0000c674    00000116     ex4_main.obj (.text:Init_GPIO)
+                  0000c78a    000000d6     ex4_hal_LCD.obj (.text:displayScrollText)
+                  0000c860    000000ca     ex4_hal_LCD.obj (.text:Init_LCD)
+                  0000c92a    0000009e     DriverLib.lib : lcd_e.obj (.text:LCD_E_setPinAsCOM)
+                  0000c9c8    00000080                   : lcd_e.obj (.text:LCD_E_setPinAsLCDFunctionEx)
+                  0000ca48    0000007a     ex4_hal_LCD.obj (.text:showChar)
+                  0000cac2    0000003e     ex4_hal_LCD.obj (.text:clearLCD)
+                  0000cb00    00000034     DriverLib.lib : gpio.obj (.text:GPIO_setAsPeripheralModuleFunctionInputPin)
+                  0000cb34    0000002c     rts430x_lc_sd_eabi.lib : div16s.asm.obj (.text)
+                  0000cb60    00000028     DriverLib.lib : lcd_e.obj (.text:LCD_E_init)
+                  0000cb88    00000022                   : gpio.obj (.text:GPIO_setAsInputPinWithPullUpResistor)
+                  0000cbaa    00000020                   : gpio.obj (.text:GPIO_selectInterruptEdge)
+                  0000cbca    00000020                   : lcd_e.obj (.text:setLCDFunction)
+                  0000cbea    0000001e                   : gpio.obj (.text:GPIO_setAsInputPin)
+                  0000cc08    0000001a                   : gpio.obj (.text:GPIO_setAsOutputPin)
+                  0000cc22    00000016                   : gpio.obj (.text:GPIO_clearInterrupt)
+                  0000cc38    00000016                   : gpio.obj (.text:GPIO_enableInterrupt)
+                  0000cc4e    00000016                   : gpio.obj (.text:GPIO_setOutputLowOnPin)
+                  0000cc64    00000016     rts430x_lc_sd_eabi.lib : div16u.asm.obj (.text)
+                  0000cc7a    00000014                            : boot.c.obj (.text:_isr:_c_int00_noinit_noargs)
+                  0000cc8e    00000012     DriverLib.lib : lcd_e.obj (.text:LCD_E_setVLCDSource)
+                  0000cca0    00000012     rts430x_lc_sd_eabi.lib : memcpy.c.obj (.text:memcpy)
+                  0000ccb2    0000000e                            : strlen.c.obj (.text:strlen)
+                  0000ccc0    0000000c     DriverLib.lib : lcd_e.obj (.text:LCD_E_on)
+                  0000cccc    0000000c                   : lcd_e.obj (.text:LCD_E_setChargePumpFreq)
+                  0000ccd8    0000000c                   : lcd_e.obj (.text:LCD_E_setVLCDVoltage)
+                  0000cce4    0000000a                   : lcd_e.obj (.text:LCD_E_selectDisplayMemory)
+                  0000ccee    0000000a     rts430x_lc_sd_eabi.lib : lsl16.asm.obj (.text)
+                  0000ccf8    0000000a                            : lsr16.asm.obj (.text)
+                  0000cd02    00000008     DriverLib.lib : lcd_e.obj (.text:LCD_E_enableChargePump)
+                  0000cd0a    00000008     rts430x_lc_sd_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
+                  0000cd12    00000006     DriverLib.lib : lcd_e.obj (.text:LCD_E_clearAllMemory)
+                  0000cd18    00000006                   : pmm.obj (.text:PMM_unlockLPM5)
+                  0000cd1e    00000006     rts430x_lc_sd_eabi.lib : exit.c.obj (.text:abort)
+                  0000cd24    00000004                            : pre_init.c.obj (.text:_system_pre_init)
 
 .stack     0    00002760    000000a0     UNINITIALIZED
                   00002760    00000002     rts430x_lc_sd_eabi.lib : boot.c.obj (.stack)
@@ -214,10 +214,10 @@ MODULE SUMMARY
        Module             code   ro data   rw data
        ------             ----   -------   -------
     ./
-       ex4_main.obj       768    24        0      
+       ex4_main.obj       768    22        0      
        ex4_hal_LCD.obj    600    78        0      
     +--+------------------+------+---------+---------+
-       Total:             1368   102       0      
+       Total:             1368   100       0      
                                                   
     /home/donat/PrgC2020FSDonatRuettimann/02_MSP430/DriverLib/Debug/DriverLib.lib
        lcd_e.obj          436    10        0      
@@ -256,7 +256,7 @@ MODULE SUMMARY
                                                   
        Stack:             0      0         160    
     +--+------------------+------+---------+---------+
-       Grand Total:       2206   170       160    
+       Grand Total:       2206   168       160    
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
@@ -341,7 +341,7 @@ address   name
 00000672  BAKMEM9                                   
 00000673  BAKMEM9_H                                 
 00000672  BAKMEM9_L                                 
-0000cd20  C$$EXIT                                   
+0000cd1e  C$$EXIT                                   
 000002ee  CAPTIO0CTL                                
 000002ef  CAPTIO0CTL_H                              
 000002ee  CAPTIO0CTL_L                              
@@ -393,16 +393,16 @@ address   name
 000001a6  GCCTL1                                    
 000001a7  GCCTL1_H                                  
 000001a6  GCCTL1_L                                  
-0000cc24  GPIO_clearInterrupt                       
-0000cc3a  GPIO_enableInterrupt                      
-0000cbac  GPIO_selectInterruptEdge                  
-0000cbec  GPIO_setAsInputPin                        
-0000cb8a  GPIO_setAsInputPinWithPullUpResistor      
-0000cc0a  GPIO_setAsOutputPin                       
-0000cb02  GPIO_setAsPeripheralModuleFunctionInputPin
-0000cc50  GPIO_setOutputLowOnPin                    
-0000c676  Init_GPIO                                 
-0000c862  Init_LCD                                  
+0000cc22  GPIO_clearInterrupt                       
+0000cc38  GPIO_enableInterrupt                      
+0000cbaa  GPIO_selectInterruptEdge                  
+0000cbea  GPIO_setAsInputPin                        
+0000cb88  GPIO_setAsInputPinWithPullUpResistor      
+0000cc08  GPIO_setAsOutputPin                       
+0000cb00  GPIO_setAsPeripheralModuleFunctionInputPin
+0000cc4e  GPIO_setOutputLowOnPin                    
+0000c674  Init_GPIO                                 
+0000c860  Init_LCD                                  
 00000604  LCDBLKCTL                                 
 00000605  LCDBLKCTL_H                               
 00000604  LCDBLKCTL_L                               
@@ -527,17 +527,17 @@ address   name
 00000608  LCDVCTL                                   
 00000609  LCDVCTL_H                                 
 00000608  LCDVCTL_L                                 
-0000c47c  LCD_E_INIT_PARAM                          
-0000cd14  LCD_E_clearAllMemory                      
-0000cd04  LCD_E_enableChargePump                    
-0000cb62  LCD_E_init                                
-0000ccc2  LCD_E_on                                  
-0000cce6  LCD_E_selectDisplayMemory                 
-0000ccce  LCD_E_setChargePumpFreq                   
-0000c92c  LCD_E_setPinAsCOM                         
-0000c9ca  LCD_E_setPinAsLCDFunctionEx               
-0000cc90  LCD_E_setVLCDSource                       
-0000ccda  LCD_E_setVLCDVoltage                      
+0000c47a  LCD_E_INIT_PARAM                          
+0000cd12  LCD_E_clearAllMemory                      
+0000cd02  LCD_E_enableChargePump                    
+0000cb60  LCD_E_init                                
+0000ccc0  LCD_E_on                                  
+0000cce4  LCD_E_selectDisplayMemory                 
+0000cccc  LCD_E_setChargePumpFreq                   
+0000c92a  LCD_E_setPinAsCOM                         
+0000c9c8  LCD_E_setPinAsLCDFunctionEx               
+0000cc8e  LCD_E_setVLCDSource                       
+0000ccd8  LCD_E_setVLCDVoltage                      
 0000020e  P1IV                                      
 0000021e  P2IV                                      
 00000204  PADIR                                     
@@ -627,7 +627,7 @@ address   name
 0000012a  PMMIFG                                    
 0000012b  PMMIFG_H                                  
 0000012a  PMMIFG_L                                  
-0000cd1a  PMM_unlockLPM5                            
+0000cd18  PMM_unlockLPM5                            
 000003cc  RTCCNT                                    
 000003cd  RTCCNT_H                                  
 000003cc  RTCCNT_L                                  
@@ -795,7 +795,7 @@ address   name
 000001cc  WDTCTL_L                                  
 00002800  __STACK_END                               
 000000a0  __STACK_SIZE                              
-0000cd0c  __TI_ISR_TRAP                             
+0000cd0a  __TI_ISR_TRAP                             
 0000ffe2  __TI_int45                                
 0000ffe4  __TI_int46                                
 0000ffe6  __TI_int47                                
@@ -814,25 +814,25 @@ ffffffff  __TI_pprof_out_hndl
 ffffffff  __TI_prof_data_size                       
 ffffffff  __TI_prof_data_start                      
 ffffffff  __c_args__                                
-0000cb36  __mspabi_divi                             
-0000cc66  __mspabi_divu                             
-0000cb36  __mspabi_remi                             
-0000cc66  __mspabi_remu                             
-0000ccf0  __mspabi_slli                             
-0000ccfa  __mspabi_srli                             
-0000cc7c  _c_int00_noinit_noargs                    
+0000cb34  __mspabi_divi                             
+0000cc64  __mspabi_divu                             
+0000cb34  __mspabi_remi                             
+0000cc64  __mspabi_remu                             
+0000ccee  __mspabi_slli                             
+0000ccf8  __mspabi_srli                             
+0000cc7a  _c_int00_noinit_noargs                    
 0000fffe  _reset_vector                             
 00002760  _stack                                    
-0000cd26  _system_pre_init                          
-0000cd20  abort                                     
+0000cd24  _system_pre_init                          
+0000cd1e  abort                                     
 0000c400  alphabetBig                               
-0000cac4  clearLCD                                  
-0000c468  digit                                     
-0000c78c  displayScrollText                         
-0000c48c  main                                      
-0000cca2  memcpy                                    
-0000ca4a  showChar                                  
-0000ccb4  strlen                                    
+0000cac2  clearLCD                                  
+0000c466  digit                                     
+0000c78a  displayScrollText                         
+0000c48a  main                                      
+0000cca0  memcpy                                    
+0000ca48  showChar                                  
+0000ccb2  strlen                                    
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -1350,46 +1350,46 @@ address   name
 00002760  _stack                                    
 00002800  __STACK_END                               
 0000c400  alphabetBig                               
-0000c468  digit                                     
-0000c47c  LCD_E_INIT_PARAM                          
-0000c48c  main                                      
-0000c676  Init_GPIO                                 
-0000c78c  displayScrollText                         
-0000c862  Init_LCD                                  
-0000c92c  LCD_E_setPinAsCOM                         
-0000c9ca  LCD_E_setPinAsLCDFunctionEx               
-0000ca4a  showChar                                  
-0000cac4  clearLCD                                  
-0000cb02  GPIO_setAsPeripheralModuleFunctionInputPin
-0000cb36  __mspabi_divi                             
-0000cb36  __mspabi_remi                             
-0000cb62  LCD_E_init                                
-0000cb8a  GPIO_setAsInputPinWithPullUpResistor      
-0000cbac  GPIO_selectInterruptEdge                  
-0000cbec  GPIO_setAsInputPin                        
-0000cc0a  GPIO_setAsOutputPin                       
-0000cc24  GPIO_clearInterrupt                       
-0000cc3a  GPIO_enableInterrupt                      
-0000cc50  GPIO_setOutputLowOnPin                    
-0000cc66  __mspabi_divu                             
-0000cc66  __mspabi_remu                             
-0000cc7c  _c_int00_noinit_noargs                    
-0000cc90  LCD_E_setVLCDSource                       
-0000cca2  memcpy                                    
-0000ccb4  strlen                                    
-0000ccc2  LCD_E_on                                  
-0000ccce  LCD_E_setChargePumpFreq                   
-0000ccda  LCD_E_setVLCDVoltage                      
-0000cce6  LCD_E_selectDisplayMemory                 
-0000ccf0  __mspabi_slli                             
-0000ccfa  __mspabi_srli                             
-0000cd04  LCD_E_enableChargePump                    
-0000cd0c  __TI_ISR_TRAP                             
-0000cd14  LCD_E_clearAllMemory                      
-0000cd1a  PMM_unlockLPM5                            
-0000cd20  C$$EXIT                                   
-0000cd20  abort                                     
-0000cd26  _system_pre_init                          
+0000c466  digit                                     
+0000c47a  LCD_E_INIT_PARAM                          
+0000c48a  main                                      
+0000c674  Init_GPIO                                 
+0000c78a  displayScrollText                         
+0000c860  Init_LCD                                  
+0000c92a  LCD_E_setPinAsCOM                         
+0000c9c8  LCD_E_setPinAsLCDFunctionEx               
+0000ca48  showChar                                  
+0000cac2  clearLCD                                  
+0000cb00  GPIO_setAsPeripheralModuleFunctionInputPin
+0000cb34  __mspabi_divi                             
+0000cb34  __mspabi_remi                             
+0000cb60  LCD_E_init                                
+0000cb88  GPIO_setAsInputPinWithPullUpResistor      
+0000cbaa  GPIO_selectInterruptEdge                  
+0000cbea  GPIO_setAsInputPin                        
+0000cc08  GPIO_setAsOutputPin                       
+0000cc22  GPIO_clearInterrupt                       
+0000cc38  GPIO_enableInterrupt                      
+0000cc4e  GPIO_setOutputLowOnPin                    
+0000cc64  __mspabi_divu                             
+0000cc64  __mspabi_remu                             
+0000cc7a  _c_int00_noinit_noargs                    
+0000cc8e  LCD_E_setVLCDSource                       
+0000cca0  memcpy                                    
+0000ccb2  strlen                                    
+0000ccc0  LCD_E_on                                  
+0000cccc  LCD_E_setChargePumpFreq                   
+0000ccd8  LCD_E_setVLCDVoltage                      
+0000cce4  LCD_E_selectDisplayMemory                 
+0000ccee  __mspabi_slli                             
+0000ccf8  __mspabi_srli                             
+0000cd02  LCD_E_enableChargePump                    
+0000cd0a  __TI_ISR_TRAP                             
+0000cd12  LCD_E_clearAllMemory                      
+0000cd18  PMM_unlockLPM5                            
+0000cd1e  C$$EXIT                                   
+0000cd1e  abort                                     
+0000cd24  _system_pre_init                          
 0000ffe2  __TI_int45                                
 0000ffe4  __TI_int46                                
 0000ffe6  __TI_int47                                
